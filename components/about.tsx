@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Award, GraduationCap, Briefcase } from "lucide-react"
 
 const credentials = [
@@ -55,6 +56,19 @@ export function About() {
         <h2 className="mb-4 text-center text-3xl font-bold text-foreground md:text-4xl">
           Gianluca Kirilmaz
         </h2>
+
+        <div className="mx-auto mb-8 flex justify-center">
+          <div className="relative h-48 w-48 overflow-hidden rounded-2xl border-2 border-primary/30 md:h-56 md:w-56">
+            <Image
+              src="/images/gianluca-profile.jpg"
+              alt="Gianluca Kirilmaz - Growth Hacker"
+              fill
+              className="object-cover object-top"
+              priority
+            />
+          </div>
+        </div>
+
         <p className="mx-auto mb-16 max-w-2xl text-center text-muted-foreground leading-relaxed">
           Growth Hacker con background in Digital Marketing, Neuromarketing e AI.
           Mi occupo di trasformare dati in crescita concreta per le aziende,
