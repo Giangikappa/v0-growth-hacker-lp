@@ -1,6 +1,5 @@
 import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
-import { Metrics } from "@/components/metrics"
 import { Services } from "@/components/services"
 import { About } from "@/components/about"
 import { Stack } from "@/components/stack"
@@ -13,7 +12,6 @@ export default function Page() {
       <Navbar />
       <main>
         <Hero />
-        <Metrics />
         <Services />
         <About />
         <Stack />

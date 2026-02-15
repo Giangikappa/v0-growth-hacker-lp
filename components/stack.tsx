@@ -1,7 +1,7 @@
 const tools = [
   { category: "Advertising", items: ["Google Ads", "Meta Ads", "TikTok Manager"] },
   { category: "Analytics", items: ["Google Analytics 4", "Data Studio", "Hotjar"] },
-  { category: "CMS & Web", items: ["WordPress", "Figma", "HTML/CSS"] },
+  { category: "CMS & Web", items: ["WordPress", "Figma"] },
   { category: "Automation & AI", items: ["N8N", "Airtable", "Replit", "V0"] },
   { category: "Social", items: ["Meta Business Suite", "TikTok Manager"] },
   { category: "Metodologia", items: ["Growth Loop", "North Star Metric", "A/B Testing", "Lean Startup"] },
