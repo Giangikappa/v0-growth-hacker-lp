@@ -143,7 +143,7 @@ export function ContactForm() {
             </Button>
 
             <p className="text-center text-xs text-muted-foreground">
-              Rispondo entro 24 ore. Nessun costo, nessun impegno.
+              Rispondo entro 24 ore.
             </p>
           </form>
         )}
