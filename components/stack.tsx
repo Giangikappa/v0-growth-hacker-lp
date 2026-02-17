@@ -1,10 +1,10 @@
 const tools = [
   { category: "Advertising", items: ["Google Ads", "Meta Ads", "TikTok Manager"] },
-  { category: "Analytics", items: ["Google Analytics 4", "Data Studio", "Hotjar"] },
+  { category: "Analytics", items: ["Google Analytics 4"] },
   { category: "CMS & Web", items: ["WordPress", "Figma"] },
   { category: "Automation & AI", items: ["N8N", "Airtable", "Replit", "V0"] },
-  { category: "Social", items: ["Meta Business Suite", "TikTok Manager"] },
-  { category: "Metodologia", items: ["Growth Loop", "North Star Metric", "A/B Testing", "Lean Startup"] },
+  { category: "Social", items: ["Meta Business Suite", "TikTok Manager", "Linkedin"] },
+  { category: "Metodologia", items: ["Growth Loop", "North Star Metric", "A/B Testing", "Product-Led Growth"] },
 ]
 
 export function Stack() {
