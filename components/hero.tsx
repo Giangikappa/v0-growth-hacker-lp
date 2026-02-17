@@ -17,8 +17,8 @@ export function Hero() {
 
         <h1 className="mb-8 text-4xl font-bold leading-tight tracking-tight text-foreground md:text-6xl lg:text-7xl">
           <span className="text-balance">
-            Faccio crescere il tuo business con{" "}
-            <span className="text-primary">dati, test e automazione.</span>
+            Supporto startup e scaleup nel migliorare {" "}
+            <span className="text-primary">funnel e performance con un approccio sperimentale.</span>
           </span>
         </h1>
 
