@@ -29,7 +29,7 @@ export function ContactForm() {
         </h2>
         <p className="mx-auto mb-12 max-w-lg text-center text-muted-foreground leading-relaxed">
           Compila il form e fissiamo una call conoscitiva di 30 minuti.
-          Nessun impegno, solo una conversazione per capire se posso aiutarti.
+          Nessun impegno, solo una conversazione per capire se sono la persona che fa per te.
         </p>
 
         {submitted ? (
