@@ -29,7 +29,7 @@ export function ContactForm() {
         </h2>
         <p className="mx-auto mb-12 max-w-lg text-center text-muted-foreground leading-relaxed">
           Compila il form e fissiamo una call conoscitiva di 30 minuti.
-          Nessun impegno, solo una conversazione per capire se posso aiutarti.
+          Nessun impegno, solo una conversazione per capire se sono la persona che fa per la tua azienda.
         </p>
 
         {submitted ? (
@@ -143,7 +143,7 @@ export function ContactForm() {
             </Button>
 
             <p className="text-center text-xs text-muted-foreground">
-              Rispondo entro 24 ore. Nessun costo, nessun impegno.
+              Rispondo entro 24 ore.
             </p>
           </form>
         )}

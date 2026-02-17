@@ -20,7 +20,7 @@ export function Footer() {
           </div>
           <div className="flex items-center gap-2">
             <MapPin className="h-4 w-4 text-primary" />
-            <span>Vedano al Lambro (MB), Italia</span>
+            <span>+39 348 2705979</span>
           </div>
         </div>
 
