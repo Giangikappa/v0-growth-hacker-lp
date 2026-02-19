@@ -25,7 +25,7 @@ export function ContactForm() {
 
     try {
       // Invio dei dati al tuo URL di Google Script
-      await fetch("https://script.google.com", {
+      await fetch("https://script.google.com/macros/s/AKfycbxZY1lVI_3sYCRGySInd9sto7eINImsRGyrjrfexmji3dGE5TjJ3ZTXqLtcbbzr5znl4A/exec", {
         method: "POST",
         mode: "no-cors", // Obbligatorio per evitare errori CORS con Google Scripts
         body: params,
