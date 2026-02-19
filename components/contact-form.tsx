@@ -8,14 +8,37 @@ import { Send, CheckCircle, ArrowRight } from "lucide-react"
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setLoading(true)
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    setLoading(false)
-    setSubmitted(true)
+    setError(false)
+
+    const formData = new FormData(e.currentTarget)
+
+    // Prepariamo i dati per Google Apps Script (URLSearchParams è il formato più compatibile)
+    const params = new URLSearchParams()
+    formData.forEach((value, key) => {
+      params.append(key, value.toString())
+    })
+
+    try {
+      // Invio dei dati al tuo URL di Google Script
+      await fetch("https://script.google.com", {
+        method: "POST",
+        mode: "no-cors", // Obbligatorio per evitare errori CORS con Google Scripts
+        body: params,
+      })
+
+      // Poiché usiamo no-cors, non possiamo leggere la risposta, ma se non va in catch assumiamo il successo
+      setSubmitted(true)
+    } catch (err) {
+      console.error("Errore nell'invio:", err)
+      setError(true)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -33,15 +56,18 @@ export function ContactForm() {
         </p>
 
         {submitted ? (
-          <div className="flex flex-col items-center gap-4 rounded-lg border border-primary/30 bg-primary/5 p-12 text-center">
+          <div className="flex flex-col items-center gap-4 rounded-lg border border-primary/30 bg-primary/5 p-12 text-center animate-in fade-in zoom-in duration-500">
             <CheckCircle className="h-12 w-12 text-primary" />
             <h3 className="text-xl font-semibold text-foreground">Richiesta inviata.</h3>
             <p className="text-muted-foreground">
-              Ti rispondo entro 24 ore per fissare la call.
+              Ti rispondo entro 24 ore per fissare la call. Controlla la tua email!
             </p>
+            <Button variant="outline" onClick={() => setSubmitted(false)} className="mt-4">
+              Invia un altro messaggio
+            </Button>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col gap-5 rounded-lg border border-border bg-background p-8">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-5 rounded-lg border border-border bg-background p-8 shadow-sm">
             <div className="grid gap-5 sm:grid-cols-2">
               <div className="flex flex-col gap-2">
                 <label htmlFor="nome" className="text-sm font-medium text-foreground">
@@ -123,21 +149,27 @@ export function ContactForm() {
               />
             </div>
 
+            {error && (
+              <p className="text-sm text-destructive font-medium text-center">
+                Si è verificato un errore nell'invio. Per favore riprova o scrivimi direttamente.
+              </p>
+            )}
+
             <Button
               type="submit"
               size="lg"
-              className="mt-2 h-14 text-base font-semibold"
+              className="mt-2 h-14 text-base font-semibold transition-all active:scale-95"
               disabled={loading}
             >
               {loading ? (
                 <>
-                  <Send className="h-4 w-4 animate-pulse" />
+                  <Send className="mr-2 h-4 w-4 animate-pulse" />
                   Invio in corso...
                 </>
               ) : (
                 <>
                   Prenota la call conoscitiva
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </>
               )}
             </Button>
